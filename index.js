@@ -1,4 +1,5 @@
 const cssLoaderConfig = require('@zeit/next-css/css-loader-config')
+const IconFontPlugin = require('icon-font-loader').Plugin
 
 module.exports = (nextConfig = {}) => {
   return Object.assign({}, nextConfig, {
@@ -40,6 +41,8 @@ module.exports = (nextConfig = {}) => {
           use: options.defaultLoaders.iconfont
         }
       )
+      config.plugins = config.plugins || []
+      config.plugins.push(new IconFontPlugin())
 
       if (typeof nextConfig.webpack === 'function') {
         return nextConfig.webpack(config, options)
