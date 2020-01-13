@@ -1,0 +1,13 @@
+{
+  "name": "next-icon-font",
+  "version": "1.0.0",
+  "description": "icon-font-loader for nextjs",
+  "main": "index.js",
+  "author": "Amiel",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "icon-font-loader": "^2.2.0"
+  }
+}
