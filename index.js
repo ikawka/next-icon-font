@@ -15,10 +15,11 @@ module.exports = (nextConfig = {}) => {
         cssModules,
         cssLoaderOptions,
         postcssLoaderOptions,
+        sassLoaderOptions = {}
       } = nextConfig
 
       options.defaultLoaders.iconfont = cssLoaderConfig(config, {
-        extensions: ['scss'],
+        extensions: ['css'],
         cssModules,
         cssLoaderOptions,
         postcssLoaderOptions,
@@ -29,13 +30,12 @@ module.exports = (nextConfig = {}) => {
             loader: 'icon-font-loader', 
             options: { fallback: 'style-loader' },
           },
-          { loader: 'sass-loader' },
         ],
       })
 
       config.module.rules.push(
         {
-          test: /\.[s]?css$/,
+          test: /\.css$/,
           use: options.defaultLoaders.iconfont
         },
       )
