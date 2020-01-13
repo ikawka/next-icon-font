@@ -26,6 +26,12 @@ module.exports = (nextConfig = {}) => {
         isServer,
         loaders: [
           {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
             loader: 'icon-font-loader',
           },
         ],
