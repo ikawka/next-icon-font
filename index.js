@@ -18,7 +18,7 @@ module.exports = (nextConfig = {}) => {
       } = nextConfig
 
       options.defaultLoaders.iconfont = cssLoaderConfig(config, {
-        extensions: ['css'],
+        extensions: ['scss'],
         cssModules,
         cssLoaderOptions,
         postcssLoaderOptions,
@@ -26,14 +26,10 @@ module.exports = (nextConfig = {}) => {
         isServer,
         loaders: [
           {
-            loader: 'style-loader',
+            loader: 'icon-font-loader', 
+            options: { fallback: 'style-loader' },
           },
-          {
-            loader: 'css-loader',
-          },
-          {
-            loader: 'icon-font-loader',
-          },
+          { loader: 'sass-loader' },
         ],
       })
 
