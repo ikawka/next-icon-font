@@ -33,7 +33,7 @@ module.exports = (nextConfig = {}) => {
 
       config.module.rules.push(
         {
-          test: /\.css$/,
+          test: /\.[s]?css$/,
           use: options.defaultLoaders.iconfont
         },
       )
