@@ -18,7 +18,7 @@ module.exports = (nextConfig = {}) => {
       } = nextConfig
 
       options.defaultLoaders.iconfont = cssLoaderConfig(config, {
-        extensions: ['scss', 'sass', 'css'],
+        extensions: ['css'],
         cssModules,
         cssLoaderOptions,
         postcssLoaderOptions,
@@ -33,13 +33,9 @@ module.exports = (nextConfig = {}) => {
 
       config.module.rules.push(
         {
-          test: /\.scss$/,
+          test: /\.css$/,
           use: options.defaultLoaders.iconfont
         },
-        {
-          test: /\.sass$/,
-          use: options.defaultLoaders.iconfont
-        }
       )
       config.plugins = config.plugins || []
       config.plugins.push(new IconFontPlugin())
